@@ -1,3 +1,5 @@
+import uuid from 'react-uuid'
+
 class Services {
     login(username, password) {
         const requestOptions = {
@@ -10,13 +12,15 @@ class Services {
     }
 
     onBoarding(userData) {
+        const sendUuid = uuid();
+        const sendData = { ...userData, requestKey: sendUuid };
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(userData)
+            body: JSON.parse(JSON.stringify(sendData))
         };
         return fetch('https://webapi.demo.bluechain.com/v1/onboard', requestOptions)
-            .then(response => response.json());
+            .then(res => res.json());
 
     }
 } 
