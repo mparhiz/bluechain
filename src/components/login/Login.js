@@ -44,21 +44,16 @@ function Login() {
           >
             <Paper
               variant="elevation"
-              elevation={2}
+              elevation={1}
               className="login-background"
             >
-              <Grid item>
-                <Typography component="h2" variant="h5">
-                  Sign in
-                </Typography>
-              </Grid>
               <Grid item>
                 <form onSubmit={handleSubmit}>
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
                       <TextField
                         type="text"
-                        placeholder="Username"
+                        label="Username"
                         fullWidth
                         name="username"
                         variant="outlined"
@@ -71,7 +66,7 @@ function Login() {
                     <Grid item>
                       <TextField
                         type="password"
-                        placeholder="Password"
+                        label="Password"
                         fullWidth
                         name="password"
                         variant="outlined"
@@ -85,7 +80,7 @@ function Login() {
                     variant="contained"
                     color="primary"
                     type="submit"
-                    className="button-block"
+                    className="login-button-block"
                   >
                     Submit
                   </Button>
